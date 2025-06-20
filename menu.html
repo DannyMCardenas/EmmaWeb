@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>MENUUU :0</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff9f2;
+      color: #333;
+      text-align: center;
+    }
+
+    header {
+      background-color: #ff8a65;
+      color: white;
+      padding: 2rem;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    .contenedor {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    .dia {
+      background-color: #ffffff;
+      margin: 1rem 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      transition: max-height 0.5s ease-out;
+    }
+
+    .titulo-dia {
+      cursor: pointer;
+      background-color: #ffe0b2;
+      padding: 1rem;
+      font-size: 1.5rem;
+      color: #ff7043;
+      margin: 0;
+    }
+
+    .contenido-dia {
+      padding: 1rem;
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .contenido-dia.visible {
+      display: block;
+      opacity: 1;
+    }
+
+    .comida {
+      margin: 0.3rem 0;
+    }
+  </style>
+</head>
+<body>
+
+  <header>MENUUU :0</header>
+
+  <div class="contenedor">
+    <div class="dia">
+      <h2 class="titulo-dia">Sábado</h2>
+      <div class="contenido-dia">
+        <p class="comida">🍞 Pan</p>
+        <p class="comida">🧀 Queso</p>
+        <p class="comida">☕ Café</p>
+      </div>
+    </div>
+
+    <div class="dia">
+      <h2 class="titulo-dia">Domingo</h2>
+      <div class="contenido-dia">
+        <p class="comida">🍳 Desayuno: Huevitos</p>
+        <p class="comida">🥩 Almuerzo: Azado</p>
+        <p class="comida">🌭 Cena: Perros Calientes</p>
+      </div>
+    </div>
+
+    <div class="dia">
+      <h2 class="titulo-dia">Lunes</h2>
+      <div class="contenido-dia">
+        <p class="comida">🍳 Desayuno: Huevitos</p>
+        <p class="comida">🍝 Almuerzo: Pasta</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Seleccionamos todos los títulos
+    const titulos = document.querySelectorAll('.titulo-dia');
+
+    titulos.forEach(titulo => {
+      titulo.addEventListener('click', () => {
+        const contenido = titulo.nextElementSibling;
+
+        // Alternamos la visibilidad
+        contenido.classList.toggle('visible');
+      });
+    });
+  </script>
+
+</body>
+</html>
